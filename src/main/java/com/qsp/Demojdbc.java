@@ -13,7 +13,11 @@ public class Demojdbc {
                 Connection con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","tiger");
                 System.out.println(con);
                 Statement stm=con.createStatement();
-                stm.execute("insert into test values('xyz')");
+                //inserting the data
+//                stm.execute("insert into test values('xyz')");
+
+                //deleting the data
+                stm.execute("DELETE from test where name='xyz' ");
                 System.out.println("ok");
 
             }catch(ClassNotFoundException | SQLException e) {
